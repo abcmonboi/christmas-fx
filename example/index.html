@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ab/christmas-fx demo</title>
+    <style>
+      :root {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        color: #1c1917;
+        background: #f5f0eb;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+      main {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 72px 24px 96px;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.35em;
+      }
+      p {
+        line-height: 1.55;
+        color: #44403c;
+      }
+      form {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      label {
+        display: grid;
+        gap: 6px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      input {
+        padding: 10px 12px;
+        border: 1px solid #d6d3d1;
+        border-radius: 8px;
+        font: inherit;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      button,
+      .link-btn {
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        background: #9f1239;
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .link-btn {
+        display: inline-flex;
+        align-items: center;
+        background: #1e3a5f;
+      }
+      .hint {
+        margin-top: 32px;
+        font-size: 0.85rem;
+        color: #78716c;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Christmas FX demo</h1>
+      <p>
+        Corners, snowfall, Santa hats on <code>button</code> / <code>input</code> /
+        <code>a</code>, and a first-visit welcome modal. Demo forces
+        <code>enabled: true</code> so it works outside Dec–Jan.
+      </p>
+
+      <form>
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" />
+        </label>
+        <div class="actions">
+          <button type="button" id="add-btn">Add dynamic button</button>
+          <button type="submit">Submit</button>
+          <a class="link-btn" href="https://example.com" target="_blank" rel="noreferrer"
+            >External link</a
+          >
+        </div>
+      </form>
+
+      <p class="hint">
+        Clear <code>localStorage</code> key <code>ab-christmas-fx-welcome</code> to see
+        the modal again. Use <code>destroy()</code> / <code>init()</code> from the console
+        via the exported API on <code>window.__xmas</code>.
+      </p>
+      <div id="dynamic"></div>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
