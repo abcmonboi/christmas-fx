@@ -1,11 +1,14 @@
 {
-  "name": "@ab/christmas-fx",
+  "name": "@abcmonboi/christmas-fx",
   "version": "0.1.0",
   "description": "Framework-agnostic Christmas overlays: corners, snow, Santa hats, and a first-visit welcome modal",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
